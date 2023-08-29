@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-part of 'counter_object.dart';
+part of 'counter_objects.dart';
 
 // **************************************************************************
 // TypeAdapterGenerator
@@ -17,9 +17,9 @@ class CounterObjectAdapter extends TypeAdapter<CounterObject> {
       for (int i = 0; i < numOfFields; i++) reader.readByte(): reader.read(),
     };
     return CounterObject(
-      name: fields[0] as String,
-      daytime: fields[1] as String,
-      id: fields[2] as String,
+      number: fields[0] as int,
+      id: fields[1] as String,
+      date: fields[2] as String,
     );
   }
 
@@ -28,11 +28,11 @@ class CounterObjectAdapter extends TypeAdapter<CounterObject> {
     writer
       ..writeByte(3)
       ..writeByte(0)
-      ..write(obj.name)
+      ..write(obj.number)
       ..writeByte(1)
-      ..write(obj.daytime)
+      ..write(obj.id)
       ..writeByte(2)
-      ..write(obj.id);
+      ..write(obj.date);
   }
 
   @override
