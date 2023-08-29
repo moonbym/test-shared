@@ -1,9 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:test/control/providers/providers.dart';
+import 'package:test/model/database/hive_objects/counter_object.dart';
 import 'package:test/view/initpage.dart';
+import 'package:hive_flutter/hive_flutter.dart';
 
-void main() {
+void main() async {
+  await Hive.initFlutter("CounterDb");
+  Hive.registerAdapter(CounterObjectAdapter());
   runApp(MultiProvider(
       providers: [ChangeNotifierProvider(create: (_) => NumberState())],
       child: const MyApp()));
